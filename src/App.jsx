@@ -15,14 +15,31 @@ const App = () => {
     let nextIndex = ++currentIndex
     nextIndex = nextIndex < reviews.length ? nextIndex : 0
     const nextReview = reviews[nextIndex]
-    setPerson({ ...nextReview })
-    setIndex(nextIndex)
+    updateReview(nextIndex, nextReview)
+  }
+  const prevReview = (currentIndex) => {
+    let previousIndex = --currentIndex
+    previousIndex = currentIndex >= 0 ? currentIndex : reviews.length - 1
+    const nextReview = reviews[previousIndex]
+    updateReview(previousIndex, nextReview)
+  }
+
+  const updateReview = (index, review) => {
+    setPerson({ ...review })
+    setIndex(index)
   }
 
   return (
     <main>
       <section>
-        {person && <Review {...person} index={index} nextReview={nextReview} />}
+        {person && (
+          <Review
+            {...person}
+            index={index}
+            prevReview={prevReview}
+            nextReview={nextReview}
+          />
+        )}
       </section>
     </main>
   )
