@@ -9,6 +9,7 @@ const Review = ({
   text,
   nextReview,
   prevReview,
+  surpriseMe,
   index,
 }) => {
   return (
@@ -32,7 +33,9 @@ const Review = ({
           <FaAngleRight />
         </button>
       </div>
-      <button className='btn btn-hipster'>Surprise Me</button>
+      <button className='btn btn-hipster' onClick={() => surpriseMe()}>
+        Surprise Me
+      </button>
     </article>
   )
 }

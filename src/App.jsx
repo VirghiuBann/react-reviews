@@ -24,6 +24,12 @@ const App = () => {
     updateReview(previousIndex, nextReview)
   }
 
+  const surpriseMe = () => {
+    const randomIndex = Math.floor(Math.random() * Math.floor(reviews.length))
+    const randomReview = reviews[randomIndex]
+    updateReview(randomIndex, randomReview)
+  }
+
   const updateReview = (index, review) => {
     setPerson({ ...review })
     setIndex(index)
@@ -38,6 +44,7 @@ const App = () => {
             index={index}
             prevReview={prevReview}
             nextReview={nextReview}
+            surpriseMe={surpriseMe}
           />
         )}
       </section>
