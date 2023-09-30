@@ -1,7 +1,7 @@
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6'
 import { FaQuoteRight } from 'react-icons/fa'
 
-const Review = ({ id, name, job, image, text }) => {
+const Review = ({ id, name, job, image, text, nextReview, index }) => {
   return (
     <article className='review'>
       <div className='img-container'>
@@ -19,7 +19,7 @@ const Review = ({ id, name, job, image, text }) => {
         <button className='prev-btn'>
           <FaAngleLeft />
         </button>
-        <button className='next-btn'>
+        <button className='next-btn' onClick={() => nextReview(index)}>
           <FaAngleRight />
         </button>
       </div>
