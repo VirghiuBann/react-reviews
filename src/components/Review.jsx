@@ -1,4 +1,4 @@
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2'
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6'
 import { FaQuoteRight } from 'react-icons/fa'
 
 const Review = ({ id, name, job, image, text }) => {
@@ -11,15 +11,19 @@ const Review = ({ id, name, job, image, text }) => {
         </div>
       </div>
       <div>
-        <h2>{name}</h2>
-        <h4>{job}</h4>
-        <p>{text}</p>
+        <h2 className='author'>{name}</h2>
+        <h2 className='job'>{job}</h2>
+        <p className='info'>{text}</p>
       </div>
-      <div>
-        <HiChevronLeft />
-        <HiChevronRight />
+      <div className='btn-container'>
+        <button className='prev-btn'>
+          <FaAngleLeft />
+        </button>
+        <button className='next-btn'>
+          <FaAngleRight />
+        </button>
       </div>
-      <button className='btn'>Surprise Me</button>
+      <button className='btn btn-hipster'>Surprise Me</button>
     </article>
   )
 }
