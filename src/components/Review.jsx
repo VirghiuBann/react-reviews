@@ -10,7 +10,6 @@ const Review = ({
   nextReview,
   prevReview,
   surpriseMe,
-  index,
 }) => {
   return (
     <article className='review'>
@@ -26,10 +25,10 @@ const Review = ({
         <p className='info'>{text}</p>
       </div>
       <div className='btn-container'>
-        <button className='prev-btn' onClick={() => prevReview(index)}>
+        <button className='prev-btn' onClick={() => prevReview()}>
           <FaAngleLeft />
         </button>
-        <button className='next-btn' onClick={() => nextReview(index)}>
+        <button className='next-btn' onClick={() => nextReview()}>
           <FaAngleRight />
         </button>
       </div>
